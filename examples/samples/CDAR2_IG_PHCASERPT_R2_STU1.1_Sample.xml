@@ -7,6 +7,7 @@
     
     Revision History:   11/09/2015              Eric M Haas     Pre-publication 
                         Oct-Dec 2016            Sarah Gaunt     Additions/Revisions for 1st update to STU Release 1 (Release 2, STU Release 1.1) 
+                        Dec 2021                Sarah Gaunt     Add extra patient address to show multiple/useable period address rendering
 -->
 <!--
     Disclaimer: 
@@ -43,7 +44,7 @@
     originating system includes both the versioned and un-versioned templateId, then both these templateIds SHOULD be preserved in the eICR document.
     The examples and sample file included with this IG illustrate the optional use of the C-CDA R1.1 templateId.
 -->
-<?xml-stylesheet type="text/xsl" href="../../transform/cda.xsl"?>
+<?xml-stylesheet type="text/xsl" href="../../transforms/CDAR2_eCR_eICR.xsl"?>
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="urn:hl7-org:v3 ../../../cda-core-2.0/schema/extensions/SDTC/infrastructure/cda/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc"
  xmlns:voc="http://www.lantanagroup.com/voc">
@@ -92,7 +93,25 @@
                      recommended to be included. -->
         <county>Fulton County</county>
         <country>US</country>
+          <useablePeriod xsi:type="IVL_TS">
+              <low value="20150902" />
+          </useablePeriod>
       </addr>
+        <addr use="H">
+            <streetAddressLine>5101 Previous Address Street St NE</streetAddressLine>
+            <city>Atlanta</city>
+            <state>GA</state>
+            <postalCode>30302</postalCode>
+            <!-- Although "county" is not explicitly specified in the US Realm Address, 
+                     it is not precluded from use and for the purposes of this IG it is 
+                     recommended to be included. -->
+            <county>Fulton County</county>
+            <country>US</country>
+            <useablePeriod xsi:type="IVL_TS">
+                <low value="20110901" />
+                <high value="20150901" />
+            </useablePeriod>
+        </addr>
       <telecom use="HP" value="tel:+1-(404)555-1212" />
       <telecom use="WP" value="tel:+1(555)555-2003" />
       <patient>

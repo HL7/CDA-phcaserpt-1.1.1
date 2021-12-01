@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-$Rev:: 8674                                            $:  Revision of last commit
-$Author:: minigrrl                                     $:  Author of last commit
-$Date:: 2021-05-13 06:46:47 +1000 (Thu, 13 May 2021)   $:  Date of last commit
--->
-
-<!--
   Title: Lantana's CDA Stylesheet
   Original Filename: cda.xsl
   Usage: This stylesheet is designed for use with clinical documents
@@ -61,7 +55,7 @@ $Date:: 2021-05-13 06:46:47 +1000 (Thu, 13 May 2021)   $:  Date of last commit
   Revision History: 2021-05-10 Sarah Gaunt    - Added: sdtc:deceasedDate, sdtc:raceCode, sdtc:ethnicGroupCode                                           
   Revision History: 2021-10-19 Sarah Gaunt    - Added preferred language display
   Revision History: 2021-10-20 Sarah Gaunt    - Added processing for patient addr useable period
-                                        
+  Revision History: 2021-12-02 Sarah Gaunt    - Remove legacy SVN version and author information after migration from HL7 GForge SVN to HL7 Github 
 
   This style sheet is based on a major revision of the original CDA XSL, which was made possible thanks to the contributions of:
   - Jingdong Li
@@ -72,7 +66,7 @@ $Date:: 2021-05-13 06:46:47 +1000 (Thu, 13 May 2021)   $:  Date of last commit
 
 -->
 <!--
-Copyright 2016-2019 Lantana Consulting Group
+Copyright 2016-2021+ Lantana Consulting Group
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
