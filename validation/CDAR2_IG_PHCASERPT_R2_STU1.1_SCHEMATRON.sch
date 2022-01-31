@@ -18,6 +18,11 @@ Manual edits to Schematron file, also updated in Trifolia
 #2 Look at author/assignedAuthor/addr or author/assignedAuthor/respresented Organization/addr as the alternate for provider facility in cases where healthCareFacility/location/addr is not available
 #3 Adjust test for missing docID to test for root=”” or nullFlavor
 
+Promote p-validate_trigger_presence rule to "fatal" (December 2021)
+
+Update nullFlavor logic for deceasedTime and deceasedInd (January 2022)
+TMorris edits for nullFlavor allowed in sdtc:deceasedTime if sdtc:deceasedInd is false. and check for not nullFlavor in sdtc:deceasedTime when sdtc:deceasedInd is true
+
 -->
 <sch:schema queryBinding="xslt2" xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:svs="urn:ihe:iti:svs:2008" xmlns:voc="http://www.lantanagroup.com/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sch:ns prefix="voc" uri="http://www.lantanagroup.com/voc"/>
@@ -28,6 +33,7 @@ Manual edits to Schematron file, also updated in Trifolia
   <sch:phase id="fatals">
     <sch:active pattern="p-validate_document-level-templateId"/>
     <sch:active pattern="p-validate_one_trigger_presence"/>
+    <sch:active pattern="p-validate_trigger_presence"/>
     <sch:active pattern="p-validate_patient_provider_author_state_zip"/>
     <sch:active pattern="p-validate_id"/>
     <sch:active pattern="p-validate_encompassing_encounter"/>
@@ -38,8 +44,6 @@ Manual edits to Schematron file, also updated in Trifolia
     <sch:active pattern="p-validate_patient_id"/>
   </sch:phase>
   <sch:phase id="errors">
-
-    <sch:active pattern="p-validate_trigger_presence"/>
     <sch:active pattern="p-urn-oid-2.16.840.1.113883.10.20.15.3.1-errors"/>
     <sch:active pattern="p-urn-oid-2.16.840.1.113883.10.20.15.3.1-CLOSEDTEMPLATE"/>
     <sch:active pattern="p-urn-oid-2.16.840.1.113883.10.20.15.3.8-errors"/>
@@ -206,13 +210,13 @@ Manual edits to Schematron file, also updated in Trifolia
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_trigger_presence">
-    <sch:rule abstract="true" id="r-validate_trigger_presence-errors-abstract" role="error">
-      <sch:assert test="not(cda:documentationOf/cda:serviceEvent/cda:code[@code = 'PHC1464']) or (cda:documentationOf/cda:serviceEvent/cda:code[@code = 'PHC1464'] and //cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.5'])">A manually initiated eICR must contain at least one Initial Case Report Manual Initiation Reason Observation. (Rule: validate_trigger_presence)</sch:assert>
-      <sch:assert test="not(//cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.5']) or (cda:documentationOf/cda:serviceEvent/cda:code[@code = 'PHC1464'] and //cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.5'])">If the "Initial Case Report Manual Initiation Reason" template is present then this must be a manually initiated eICR and documentationOf/serviceEvent must be present with code PHC1464: "Manually Initiated eICR" (Rule: validate_trigger_presence)</sch:assert>
-      <sch:assert test="(cda:documentationOf/cda:serviceEvent/cda:code[@code = 'PHC1464'] and //cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.5']) or (not(cda:documentationOf/cda:serviceEvent/cda:code[@code = 'PHC1464'] and //cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.5']) and (//cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.4'] or //cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.3'] or //cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.2']))">An automatically initiated eICR must contain at least one of Initial Case Report Trigger Code Lab Test Order, Initial Case Report Trigger Code Problem Observation, or Initial Case Report Trigger Code Result Observation. (Rule: validate_trigger_presence)</sch:assert>
+    <sch:rule abstract="true" id="r-validate_trigger_presence-fatals-abstract" role="fatal">
+        <sch:assert test="not(cda:documentationOf/cda:serviceEvent/cda:code[@code = 'PHC1464']) or (cda:documentationOf/cda:serviceEvent/cda:code[@code = 'PHC1464'] and //cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.5'])">Fatal: A manually initiated eICR must contain at least one Initial Case Report Manual Initiation Reason Observation. (Rule: validate_trigger_presence)</sch:assert>
+      <sch:assert test="not(//cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.5']) or (cda:documentationOf/cda:serviceEvent/cda:code[@code = 'PHC1464'] and //cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.5'])">Fatal: If the "Initial Case Report Manual Initiation Reason" template is present then this must be a manually initiated eICR and documentationOf/serviceEvent must be present with code PHC1464: "Manually Initiated eICR" (Rule: validate_trigger_presence)</sch:assert>
+        <sch:assert test="(cda:documentationOf/cda:serviceEvent/cda:code[@code = 'PHC1464']) or (not(cda:documentationOf/cda:serviceEvent/cda:code[@code = 'PHC1464']) and (//cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.4'] or //cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.3'] or //cda:observation/cda:templateId[@root = '2.16.840.1.113883.10.20.15.2.3.2']))">Fatal: An automatically initiated eICR must contain at least one of Initial Case Report Trigger Code Lab Test Order, Initial Case Report Trigger Code Problem Observation, or Initial Case Report Trigger Code Result Observation. (Rule: validate_trigger_presence)</sch:assert>
     </sch:rule>
-    <sch:rule context="/cda:ClinicalDocument" id="r-errors-validate_trigger_presence" role="error">
-      <sch:extends rule="r-validate_trigger_presence-errors-abstract"/>
+    <sch:rule context="/cda:ClinicalDocument" id="r-fatals-validate_trigger_presence" role="fatal">
+      <sch:extends rule="r-validate_trigger_presence-fatals-abstract"/>
     </sch:rule>
   </sch:pattern>
   <sch:pattern id="p-validate_one_trigger_presence">
@@ -1519,7 +1523,11 @@ Manual edits to Schematron file, also updated in Trifolia
       <sch:assert id="a-3284-144" test="cda:author/cda:time[not(@nullFlavor)]">This time SHALL NOT contain [0..0] @nullFlavor (CONF:3284-144).</sch:assert>
       <sch:assert id="a-3284-143" test="cda:effectiveTime[not(@nullFlavor)]">This effectiveTime SHALL NOT contain [0..0] @nullFlavor (CONF:3284-143).</sch:assert>
       <sch:assert id="a-3284-306" test="cda:recordTarget/cda:patientRole/cda:patient[count(sdtc:deceasedInd) = 1]">This patient SHALL contain exactly one [1..1] sdtc:deceasedInd (CONF:3284-306).</sch:assert>
-      <sch:assert id="a-3284-307-c" test="(not(cda:recordTarget/cda:patientRole/cda:patient/sdtc:deceasedInd[@value = 'true']) and not(cda:recordTarget/cda:patientRole/cda:patient/sdtc:deceasedTime)) or (cda:recordTarget/cda:patientRole/cda:patient/sdtc:deceasedInd[@value = 'true'] and cda:recordTarget/cda:patientRole/cda:patient/sdtc:deceasedTime)">If sdtc:deceasedInd is true then sdtc:deceasedTime *SHALL* be present (CONF:3284-307).</sch:assert>
+        <!--TM edits for nullflavors on sdtc:deceasedTime -->    
+        <sch:assert id="a-3284-307-c" test="(not (cda:recordTarget/cda:patientRole/cda:patient/sdtc:deceasedInd[@value='true'] ) and (not(cda:recordTarget/cda:patientRole/cda:patient/sdtc:deceasedTime) or cda:recordTarget/cda:patientRole/cda:patient/sdtc:deceasedTime[@nullFlavor])) or 
+            (cda:recordTarget/cda:patientRole/cda:patient/sdtc:deceasedInd[@value='true'] and 
+            cda:recordTarget/cda:patientRole/cda:patient/sdtc:deceasedTime and 
+            cda:recordTarget/cda:patientRole/cda:patient/sdtc:deceasedTime[not(@nullFlavor)] )">If sdtc:deceasedInd is true then sdtc:deceasedTime *SHALL* be present and *SHALL NOT* contain @nullFlavor.  If sdtc:deceasedInd is false then sdtc:deceasedTime *SHALL NOT* be present or sdtc:deceasedTime SHALL be @nullFlavor (CONF:3284-307).</sch:assert>
       <sch:assert id="a-3284-397" test="not(cda:documentationOf) or cda:documentationOf[count(cda:serviceEvent) = 1]">The documentationOf, if present, SHALL contain exactly one [1..1] serviceEvent (CONF:3284-397).</sch:assert>
       <sch:assert id="a-3284-398" test="not(cda:documentationOf/cda:serviceEvent) or cda:documentationOf/cda:serviceEvent[count(cda:code) = 1]">This serviceEvent SHALL contain exactly one [1..1] code (CONF:3284-398).</sch:assert>
       <sch:assert id="a-3284-399" test="not(cda:documentationOf/cda:serviceEvent/cda:code) or cda:documentationOf/cda:serviceEvent/cda:code[@code = 'PHC1464']">This code SHALL contain exactly one [1..1] @code="PHC1464" Manually Initiated eICR (CONF:3284-399).</sch:assert>
