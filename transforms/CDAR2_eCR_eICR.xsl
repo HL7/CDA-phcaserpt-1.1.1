@@ -56,6 +56,7 @@
   Revision History: 2021-10-19 Sarah Gaunt    - Added preferred language display
   Revision History: 2021-10-20 Sarah Gaunt    - Added processing for patient addr useable period
   Revision History: 2021-12-02 Sarah Gaunt    - Remove legacy SVN version and author information after migration from HL7 GForge SVN to HL7 Github 
+  Revision History: 2023-05-18 Sarah Gaunt    - Update to not display SSN if it is present
 
   This style sheet is based on a major revision of the original CDA XSL, which was made possible thanks to the contributions of:
   - Jingdong Li
@@ -1092,7 +1093,7 @@ limitations under the License.
                         <xsl:choose>
                             <xsl:when test="not(n1:id) or (n1:id/@nullFlavor and not(n1:id/@extension))">No id provided</xsl:when>
                         </xsl:choose>
-                        <xsl:for-each select="n1:id">
+                        <xsl:for-each select="n1:id[not(@root='2.16.840.1.113883.4.1')]">
                             <div class="row">
                                 <div class="col-md-6 patient-id">
                                     <xsl:call-template name="show-id" />
