@@ -1093,6 +1093,7 @@ limitations under the License.
                         <xsl:choose>
                             <xsl:when test="not(n1:id) or (n1:id/@nullFlavor and not(n1:id/@extension))">No id provided</xsl:when>
                         </xsl:choose>
+                        <!-- SG: Don't display id if it's an SSN -->
                         <xsl:for-each select="n1:id[not(@root='2.16.840.1.113883.4.1')]">
                             <div class="row">
                                 <div class="col-md-6 patient-id">
