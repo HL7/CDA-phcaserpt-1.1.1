@@ -1219,6 +1219,32 @@ limitations under the License.
                                     </xsl:choose>
                                 </div>
                             </div>
+			<!-- MJS: 20230122 Added Other Language -->
+			<div class="row">
+                                <div class="attribute-title col-md-6">
+                                    <xsl:text>Other Language</xsl:text>
+                                </div>
+                                <div class="col-md-6">
+                                    <xsl:choose>
+                                        <xsl:when test="n1:patient/n1:languageCommunication[n1:preferenceInd/@value = 'false' or not(n1:preferenceInd)]">
+                                            <xsl:variable name="vPrefLangCount">
+                                                <xsl:value-of select="count(n1:patient/n1:languageCommunication[n1:preferenceInd/@value = 'false' or not(n1:preferenceInd)])" />
+                                            </xsl:variable>
+                                            <xsl:for-each select="n1:patient/n1:languageCommunication[n1:preferenceInd/@value = 'false' or not(n1:preferenceInd)]/n1:languageCode">
+                                                <xsl:call-template name="show-preferred-language" />
+                                                <xsl:if test="$vPrefLangCount > 1 and position() != last()">
+                                                    <xsl:text> or </xsl:text>
+                                                </xsl:if>
+                                            </xsl:for-each>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <span class="generated-text">
+                                                <xsl:text>Information not available</xsl:text>
+                                            </span>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </div>
+                            </div>
 
 
                         </div>
@@ -2018,12 +2044,25 @@ limitations under the License.
         </xsl:choose>
     </xsl:template>
     <!-- show-preferred-language  -->
+    <!-- MJS: 20240122, Added 'eng', 'spa', 'vi', 'vie', 'por', 'ara', 'alb', 'sq', 'sqi', 'ukr', 'pol', 'pan', 'ita', 'rus', 'fra' --> 
     <xsl:template xmlns:n1="urn:hl7-org:v3" xmlns:in="urn:lantana-com:inline-variable-data" name="show-preferred-language">
         <xsl:choose>
             <xsl:when test="@displayName">
                 <xsl:value-of select="@displayName" />
             </xsl:when>
+		<xsl:when test="@code = 'alb'">
+                <xsl:text>Albanian</xsl:text>
+            </xsl:when>
+		<xsl:when test="@code = 'sqi'">
+                <xsl:text>Albanian</xsl:text>
+            </xsl:when>
+		<xsl:when test="@code = 'sq'">
+                <xsl:text>Albanian</xsl:text>
+            </xsl:when>
             <xsl:when test="@code = 'ar'">
+                <xsl:text>Arabic</xsl:text>
+            </xsl:when>
+	    <xsl:when test="@code = 'ara'">
                 <xsl:text>Arabic</xsl:text>
             </xsl:when>
             <xsl:when test="@code = 'bn'">
@@ -2053,6 +2092,9 @@ limitations under the License.
             <xsl:when test="@code = 'en'">
                 <xsl:text>English</xsl:text>
             </xsl:when>
+	    <xsl:when test="@code = 'eng'">
+                <xsl:text>English</xsl:text>
+            </xsl:when>
             <xsl:when test="@code = 'en-AU'">
                 <xsl:text>English (Australia)</xsl:text>
             </xsl:when>
@@ -2077,6 +2119,9 @@ limitations under the License.
             <xsl:when test="@code = 'es'">
                 <xsl:text>Spanish</xsl:text>
             </xsl:when>
+	    <xsl:when test="@code = 'spa'">
+                <xsl:text>Spanish</xsl:text>
+            </xsl:when>
             <xsl:when test="@code = 'es-AR'">
                 <xsl:text>Spanish (Argentina)</xsl:text>
             </xsl:when>
@@ -2090,6 +2135,9 @@ limitations under the License.
                 <xsl:text>Finnish</xsl:text>
             </xsl:when>
             <xsl:when test="@code = 'fr'">
+                <xsl:text>French</xsl:text>
+            </xsl:when>
+	    <xsl:when test="@code = 'fra'">
                 <xsl:text>French</xsl:text>
             </xsl:when>
             <xsl:when test="@code = 'fr-BE'">
@@ -2107,6 +2155,12 @@ limitations under the License.
             <xsl:when test="@code = 'fy-NL'">
                 <xsl:text>Frysian (Netherlands)</xsl:text>
             </xsl:when>
+	    <xsl:when test="@code = 'hat'">
+                <xsl:text>Haitian</xsl:text>
+            </xsl:when>
+	    <xsl:when test="@code = 'ht'">
+                <xsl:text>Haitian</xsl:text>
+            </xsl:when>
             <xsl:when test="@code = 'hi'">
                 <xsl:text>Hindi</xsl:text>
             </xsl:when>
@@ -2114,6 +2168,9 @@ limitations under the License.
                 <xsl:text>Croatian</xsl:text>
             </xsl:when>
             <xsl:when test="@code = 'it'">
+                <xsl:text>Italian</xsl:text>
+            </xsl:when>
+	    <xsl:when test="@code = 'ita'">
                 <xsl:text>Italian</xsl:text>
             </xsl:when>
             <xsl:when test="@code = 'it-CH'">
@@ -2146,8 +2203,17 @@ limitations under the License.
             <xsl:when test="@code = 'pa'">
                 <xsl:text>Punjabi</xsl:text>
             </xsl:when>
+	    <xsl:when test="@code = 'pan'">
+                <xsl:text>Punjabi</xsl:text>
+            </xsl:when>
             <xsl:when test="@code = 'pl'">
                 <xsl:text>Polish</xsl:text>
+            </xsl:when>
+	    <xsl:when test="@code = 'pol'">
+                <xsl:text>Polish</xsl:text>
+            </xsl:when>
+	    <xsl:when test="@code = 'por'">
+                <xsl:text>Portuguese</xsl:text>
             </xsl:when>
             <xsl:when test="@code = 'pt'">
                 <xsl:text>Portuguese</xsl:text>
@@ -2156,6 +2222,9 @@ limitations under the License.
                 <xsl:text>Portuguese (Brazil)</xsl:text>
             </xsl:when>
             <xsl:when test="@code = 'ru'">
+                <xsl:text>Russian</xsl:text>
+            </xsl:when>
+	    <xsl:when test="@code = 'rus'">
                 <xsl:text>Russian</xsl:text>
             </xsl:when>
             <xsl:when test="@code = 'ru-RU'">
@@ -2167,6 +2236,9 @@ limitations under the License.
             <xsl:when test="@code = 'sr-RS'">
                 <xsl:text>Serbian (Serbia)</xsl:text>
             </xsl:when>
+	    <xsl:when test="@code = 'sgn'">
+                <xsl:text>Sign Languages</xsl:text>
+            </xsl:when>
             <xsl:when test="@code = 'sv'">
                 <xsl:text>Swedish</xsl:text>
             </xsl:when>
@@ -2176,7 +2248,19 @@ limitations under the License.
             <xsl:when test="@code = 'te'">
                 <xsl:text>Telegu</xsl:text>
             </xsl:when>
+	    <xsl:when test="@code = 'ukr'">
+                <xsl:text>Ukrainian</xsl:text>
+            </xsl:when>
+	    <xsl:when test="@code = 'vi'">
+                <xsl:text>Vietnamese</xsl:text>
+            </xsl:when>
+		<xsl:when test="@code = 'vie'">
+                <xsl:text>Vietnamese</xsl:text>
+            </xsl:when>
             <xsl:when test="@code = 'zh'">
+                <xsl:text>Chinese</xsl:text>
+            </xsl:when>
+		<xsl:when test="@code = 'zho'">
                 <xsl:text>Chinese</xsl:text>
             </xsl:when>
             <xsl:when test="@code = 'zh-CN'">
