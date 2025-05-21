@@ -57,6 +57,7 @@
   Revision History: 2021-10-20 Sarah Gaunt    - Added processing for patient addr useable period
   Revision History: 2021-12-02 Sarah Gaunt    - Remove legacy SVN version and author information after migration from HL7 GForge SVN to HL7 Github 
   Revision History: 2023-05-18 Sarah Gaunt    - Update to not display SSN if it is present
+  Revision History: 2025-05-21 Sarah Gaunt    - Update to translate 3 character language codes
 
   This style sheet is based on a major revision of the original CDA XSL, which was made possible thanks to the contributions of:
   - Jingdong Li
@@ -2190,6 +2191,1647 @@ limitations under the License.
             </xsl:when>
             <xsl:when test="@code = 'zh-TW'">
                 <xsl:text>Chinese (Taiwan)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'aar'">
+                <xsl:text>Afar</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'abk'">
+                <xsl:text>Abkhazian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ace'">
+                <xsl:text>Achinese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ach'">
+                <xsl:text>Acoli</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ada'">
+                <xsl:text>Adangme</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ady'">
+                <xsl:text>Adyghe; Adygei</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'afa'">
+                <xsl:text>Afro-Asiatic languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'afh'">
+                <xsl:text>Afrihili</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'afr'">
+                <xsl:text>Afrikaans</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ain'">
+                <xsl:text>Ainu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'aka'">
+                <xsl:text>Akan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'akk'">
+                <xsl:text>Akkadian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'alb (B)'">
+                <xsl:text>Albanian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sqi (T)'">
+                <xsl:text>Albanian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ale'">
+                <xsl:text>Aleut</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'alg'">
+                <xsl:text>Algonquian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'alt'">
+                <xsl:text>Southern Altai</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'amh'">
+                <xsl:text>Amharic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ang'">
+                <xsl:text>English, Old (ca.450-1100)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'anp'">
+                <xsl:text>Angika</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'apa'">
+                <xsl:text>Apache languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ara'">
+                <xsl:text>Arabic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'arc'">
+                <xsl:text>Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'arg'">
+                <xsl:text>Aragonese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'arm (B)'">
+                <xsl:text>Armenian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hye (T)'">
+                <xsl:text>Armenian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'arn'">
+                <xsl:text>Mapudungun; Mapuche</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'arp'">
+                <xsl:text>Arapaho</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'art'">
+                <xsl:text>Artificial languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'arw'">
+                <xsl:text>Arawak</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'asm'">
+                <xsl:text>Assamese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ast'">
+                <xsl:text>Asturian; Bable; Leonese; Asturleonese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ath'">
+                <xsl:text>Athapascan languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'aus'">
+                <xsl:text>Australian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ava'">
+                <xsl:text>Avaric</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ave'">
+                <xsl:text>Avestan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'awa'">
+                <xsl:text>Awadhi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'aym'">
+                <xsl:text>Aymara</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'aze'">
+                <xsl:text>Azerbaijani</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bad'">
+                <xsl:text>Banda languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bai'">
+                <xsl:text>Bamileke languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bak'">
+                <xsl:text>Bashkir</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bal'">
+                <xsl:text>Baluchi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bam'">
+                <xsl:text>Bambara</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ban'">
+                <xsl:text>Balinese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'baq (B)'">
+                <xsl:text>Basque</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'eus (T)'">
+                <xsl:text>Basque</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bas'">
+                <xsl:text>Basa</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bat'">
+                <xsl:text>Baltic languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bej'">
+                <xsl:text>Beja; Bedawiyet</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bel'">
+                <xsl:text>Belarusian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bem'">
+                <xsl:text>Bemba</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ben'">
+                <xsl:text>Bengali</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ber'">
+                <xsl:text>Berber languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bho'">
+                <xsl:text>Bhojpuri</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bih'">
+                <xsl:text>Bihari languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bik'">
+                <xsl:text>Bikol</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bin'">
+                <xsl:text>Bini; Edo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bis'">
+                <xsl:text>Bislama</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bla'">
+                <xsl:text>Siksika</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bnt'">
+                <xsl:text>Bantu languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tib (B)'">
+                <xsl:text>Tibetan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bod (T)'">
+                <xsl:text>Tibetan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bos'">
+                <xsl:text>Bosnian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bra'">
+                <xsl:text>Braj</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bre'">
+                <xsl:text>Breton</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'btk'">
+                <xsl:text>Batak languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bua'">
+                <xsl:text>Buriat</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bug'">
+                <xsl:text>Buginese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bul'">
+                <xsl:text>Bulgarian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bur (B)'">
+                <xsl:text>Burmese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mya (T)'">
+                <xsl:text>Burmese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'byn'">
+                <xsl:text>Blin; Bilin</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cad'">
+                <xsl:text>Caddo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cai'">
+                <xsl:text>Central American Indian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'car'">
+                <xsl:text>Galibi Carib</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cat'">
+                <xsl:text>Catalan; Valencian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cau'">
+                <xsl:text>Caucasian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ceb'">
+                <xsl:text>Cebuano</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cel'">
+                <xsl:text>Celtic languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cze (B)'">
+                <xsl:text>Czech</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ces (T)'">
+                <xsl:text>Czech</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cha'">
+                <xsl:text>Chamorro</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chb'">
+                <xsl:text>Chibcha</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'che'">
+                <xsl:text>Chechen</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chg'">
+                <xsl:text>Chagatai</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chi (B)'">
+                <xsl:text>Chinese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'zho (T)'">
+                <xsl:text>Chinese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chk'">
+                <xsl:text>Chuukese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chm'">
+                <xsl:text>Mari</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chn'">
+                <xsl:text>Chinook jargon</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cho'">
+                <xsl:text>Choctaw</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chp'">
+                <xsl:text>Chipewyan; Dene Suline</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chr'">
+                <xsl:text>Cherokee</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chu'">
+                <xsl:text>Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chv'">
+                <xsl:text>Chuvash</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chy'">
+                <xsl:text>Cheyenne</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cmc'">
+                <xsl:text>Chamic languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cnr'">
+                <xsl:text>Montenegrin</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cop'">
+                <xsl:text>Coptic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cor'">
+                <xsl:text>Cornish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cos'">
+                <xsl:text>Corsican</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cpe'">
+                <xsl:text>Creoles and pidgins, English based</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cpf'">
+                <xsl:text>Creoles and pidgins, French-based</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cpp'">
+                <xsl:text>Creoles and pidgins, Portuguese-based</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cre'">
+                <xsl:text>Cree</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'crh'">
+                <xsl:text>Crimean Tatar; Crimean Turkish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'crp'">
+                <xsl:text>Creoles and pidgins</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'csb'">
+                <xsl:text>Kashubian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cus'">
+                <xsl:text>Cushitic languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'wel (B)'">
+                <xsl:text>Welsh</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cym (T)'">
+                <xsl:text>Welsh</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cze (B)'">
+                <xsl:text>Czech</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ces (T)'">
+                <xsl:text>Czech</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dak'">
+                <xsl:text>Dakota</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dan'">
+                <xsl:text>Danish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dar'">
+                <xsl:text>Dargwa</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'day'">
+                <xsl:text>Land Dayak languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'del'">
+                <xsl:text>Delaware</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'den'">
+                <xsl:text>Slave (Athapascan)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ger (B)'">
+                <xsl:text>German</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'deu (T)'">
+                <xsl:text>German</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dgr'">
+                <xsl:text>Tlicho; Dogrib</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'din'">
+                <xsl:text>Dinka</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'div'">
+                <xsl:text>Divehi; Dhivehi; Maldivian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'doi'">
+                <xsl:text>Dogri (macrolanguage)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dra'">
+                <xsl:text>Dravidian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dsb'">
+                <xsl:text>Lower Sorbian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dua'">
+                <xsl:text>Duala</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dum'">
+                <xsl:text>Dutch, Middle (ca.1050-1350)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dut (B)'">
+                <xsl:text>Dutch; Flemish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nld (T)'">
+                <xsl:text>Dutch; Flemish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dyu'">
+                <xsl:text>Dyula</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dzo'">
+                <xsl:text>Dzongkha</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'efi'">
+                <xsl:text>Efik</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'egy'">
+                <xsl:text>Egyptian (Ancient)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'eka'">
+                <xsl:text>Ekajuk</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gre (B)'">
+                <xsl:text>Greek, Modern (1453-)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ell (T)'">
+                <xsl:text>Greek, Modern (1453-)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'elx'">
+                <xsl:text>Elamite</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'eng'">
+                <xsl:text>English</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'enm'">
+                <xsl:text>English, Middle (1100-1500)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'epo'">
+                <xsl:text>Esperanto</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'est'">
+                <xsl:text>Estonian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'baq (B)'">
+                <xsl:text>Basque</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'eus (T)'">
+                <xsl:text>Basque</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ewe'">
+                <xsl:text>Ewe</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ewo'">
+                <xsl:text>Ewondo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fan'">
+                <xsl:text>Fang</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fao'">
+                <xsl:text>Faroese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'per (B)'">
+                <xsl:text>Persian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fas (T)'">
+                <xsl:text>Persian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fat'">
+                <xsl:text>Fanti</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fij'">
+                <xsl:text>Fijian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fil'">
+                <xsl:text>Filipino; Pilipino</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fin'">
+                <xsl:text>Finnish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fiu'">
+                <xsl:text>Finno-Ugrian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fon'">
+                <xsl:text>Fon</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fre (B)'">
+                <xsl:text>French</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fra (T)'">
+                <xsl:text>French</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fre (B)'">
+                <xsl:text>French</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fra (T)'">
+                <xsl:text>French</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'frm'">
+                <xsl:text>French, Middle (ca.1400-1600)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fro'">
+                <xsl:text>French, Old (842-ca.1400)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'frr'">
+                <xsl:text>Northern Frisian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'frs'">
+                <xsl:text>Eastern Frisian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fry'">
+                <xsl:text>Western Frisian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ful'">
+                <xsl:text>Fulah</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fur'">
+                <xsl:text>Friulian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gaa'">
+                <xsl:text>Ga</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gay'">
+                <xsl:text>Gayo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gba'">
+                <xsl:text>Gbaya</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gem'">
+                <xsl:text>Germanic languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'geo (B)'">
+                <xsl:text>Georgian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kat (T)'">
+                <xsl:text>Georgian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ger (B)'">
+                <xsl:text>German</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'deu (T)'">
+                <xsl:text>German</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gez'">
+                <xsl:text>Geez</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gil'">
+                <xsl:text>Gilbertese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gla'">
+                <xsl:text>Gaelic; Scottish Gaelic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gle'">
+                <xsl:text>Irish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'glg'">
+                <xsl:text>Galician</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'glv'">
+                <xsl:text>Manx</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gmh'">
+                <xsl:text>German, Middle High (ca.1050-1500)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'goh'">
+                <xsl:text>German, Old High (ca.750-1050)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gon'">
+                <xsl:text>Gondi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gor'">
+                <xsl:text>Gorontalo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'got'">
+                <xsl:text>Gothic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'grb'">
+                <xsl:text>Grebo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'grc'">
+                <xsl:text>Greek, Ancient (to 1453)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gre (B)'">
+                <xsl:text>Greek, Modern (1453-)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ell (T)'">
+                <xsl:text>Greek, Modern (1453-)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'grn'">
+                <xsl:text>Guarani</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gsw'">
+                <xsl:text>Swiss German; Alemannic; Alsatian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'guj'">
+                <xsl:text>Gujarati</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'gwi'">
+                <xsl:text>Gwich'in</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hai'">
+                <xsl:text>Haida</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hat'">
+                <xsl:text>Haitian; Haitian Creole</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hau'">
+                <xsl:text>Hausa</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'haw'">
+                <xsl:text>Hawaiian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'heb'">
+                <xsl:text>Hebrew</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'her'">
+                <xsl:text>Herero</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hil'">
+                <xsl:text>Hiligaynon</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'him'">
+                <xsl:text>Himachali languages; Western Pahari languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hin'">
+                <xsl:text>Hindi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hit'">
+                <xsl:text>Hittite</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hmn'">
+                <xsl:text>Hmong; Mong</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hmo'">
+                <xsl:text>Hiri Motu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hrv'">
+                <xsl:text>Croatian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hsb'">
+                <xsl:text>Upper Sorbian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hun'">
+                <xsl:text>Hungarian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hup'">
+                <xsl:text>Hupa</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'arm (B)'">
+                <xsl:text>Armenian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'hye (T)'">
+                <xsl:text>Armenian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'iba'">
+                <xsl:text>Iban</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ibo'">
+                <xsl:text>Igbo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ice (B)'">
+                <xsl:text>Icelandic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'isl (T)'">
+                <xsl:text>Icelandic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ido'">
+                <xsl:text>Ido</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'iii'">
+                <xsl:text>Sichuan Yi; Nuosu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ijo'">
+                <xsl:text>Ijo languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'iku'">
+                <xsl:text>Inuktitut</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ile'">
+                <xsl:text>Interlingue; Occidental</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ilo'">
+                <xsl:text>Iloko</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ina'">
+                <xsl:text>Interlingua (International Auxiliary Language Association)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'inc'">
+                <xsl:text>Indic languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ind'">
+                <xsl:text>Indonesian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ine'">
+                <xsl:text>Indo-European languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'inh'">
+                <xsl:text>Ingush</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ipk'">
+                <xsl:text>Inupiaq</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ira'">
+                <xsl:text>Iranian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'iro'">
+                <xsl:text>Iroquoian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ice (B)'">
+                <xsl:text>Icelandic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'isl (T)'">
+                <xsl:text>Icelandic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ita'">
+                <xsl:text>Italian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'jav'">
+                <xsl:text>Javanese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'jbo'">
+                <xsl:text>Lojban</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'jpn'">
+                <xsl:text>Japanese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'jpr'">
+                <xsl:text>Judeo-Persian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'jrb'">
+                <xsl:text>Judeo-Arabic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kaa'">
+                <xsl:text>Kara-Kalpak</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kab'">
+                <xsl:text>Kabyle</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kac'">
+                <xsl:text>Kachin; Jingpho</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kal'">
+                <xsl:text>Kalaallisut; Greenlandic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kam'">
+                <xsl:text>Kamba</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kan'">
+                <xsl:text>Kannada</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kar'">
+                <xsl:text>Karen languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kas'">
+                <xsl:text>Kashmiri</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'geo (B)'">
+                <xsl:text>Georgian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kat (T)'">
+                <xsl:text>Georgian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kau'">
+                <xsl:text>Kanuri</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kaw'">
+                <xsl:text>Kawi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kaz'">
+                <xsl:text>Kazakh</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kbd'">
+                <xsl:text>Kabardian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kha'">
+                <xsl:text>Khasi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'khi'">
+                <xsl:text>Khoisan languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'khm'">
+                <xsl:text>Central Khmer</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kho'">
+                <xsl:text>Khotanese; Sakan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kik'">
+                <xsl:text>Kikuyu; Gikuyu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kin'">
+                <xsl:text>Kinyarwanda</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kir'">
+                <xsl:text>Kirghiz; Kyrgyz</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kmb'">
+                <xsl:text>Kimbundu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kok'">
+                <xsl:text>Konkani (macrolanguage)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kom'">
+                <xsl:text>Komi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kon'">
+                <xsl:text>Kongo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kor'">
+                <xsl:text>Korean</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kos'">
+                <xsl:text>Kosraean</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kpe'">
+                <xsl:text>Kpelle</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'krc'">
+                <xsl:text>Karachay-Balkar</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'krl'">
+                <xsl:text>Karelian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kro'">
+                <xsl:text>Kru languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kru'">
+                <xsl:text>Kurukh</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kua'">
+                <xsl:text>Kuanyama; Kwanyama</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kum'">
+                <xsl:text>Kumyk</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kur'">
+                <xsl:text>Kurdish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'kut'">
+                <xsl:text>Kutenai</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lad'">
+                <xsl:text>Ladino</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lah'">
+                <xsl:text>Lahnda</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lam'">
+                <xsl:text>Lamba</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lao'">
+                <xsl:text>Lao</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lat'">
+                <xsl:text>Latin</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lav'">
+                <xsl:text>Latvian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lez'">
+                <xsl:text>Lezghian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lim'">
+                <xsl:text>Limburgan; Limburger; Limburgish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lin'">
+                <xsl:text>Lingala</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lit'">
+                <xsl:text>Lithuanian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lol'">
+                <xsl:text>Mongo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'loz'">
+                <xsl:text>Lozi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ltz'">
+                <xsl:text>Luxembourgish; Letzeburgesch</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lua'">
+                <xsl:text>Luba-Lulua</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lub'">
+                <xsl:text>Luba-Katanga</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lug'">
+                <xsl:text>Ganda</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lui'">
+                <xsl:text>Luiseno</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lun'">
+                <xsl:text>Lunda</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'luo'">
+                <xsl:text>Luo (Kenya and Tanzania)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'lus'">
+                <xsl:text>Lushai</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mac (B)'">
+                <xsl:text>Macedonian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mkd (T)'">
+                <xsl:text>Macedonian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mad'">
+                <xsl:text>Madurese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mag'">
+                <xsl:text>Magahi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mah'">
+                <xsl:text>Marshallese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mai'">
+                <xsl:text>Maithili</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mak'">
+                <xsl:text>Makasar</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mal'">
+                <xsl:text>Malayalam</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'man'">
+                <xsl:text>Mandingo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mao (B)'">
+                <xsl:text>Maori</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mri (T)'">
+                <xsl:text>Maori</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'map'">
+                <xsl:text>Austronesian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mar'">
+                <xsl:text>Marathi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mas'">
+                <xsl:text>Masai</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'may (B)'">
+                <xsl:text>Malay (macrolanguage)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'msa (T)'">
+                <xsl:text>Malay (macrolanguage)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mdf'">
+                <xsl:text>Moksha</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mdr'">
+                <xsl:text>Mandar</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'men'">
+                <xsl:text>Mende</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mga'">
+                <xsl:text>Irish, Middle (900-1200)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mic'">
+                <xsl:text>Mi'kmaq; Micmac</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'min'">
+                <xsl:text>Minangkabau</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mis'">
+                <xsl:text>Uncoded languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mac (B)'">
+                <xsl:text>Macedonian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mkd (T)'">
+                <xsl:text>Macedonian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mkh'">
+                <xsl:text>Mon-Khmer languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mlg'">
+                <xsl:text>Malagasy</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mlt'">
+                <xsl:text>Maltese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mnc'">
+                <xsl:text>Manchu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mni'">
+                <xsl:text>Manipuri</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mno'">
+                <xsl:text>Manobo languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'moh'">
+                <xsl:text>Mohawk</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mon'">
+                <xsl:text>Mongolian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mos'">
+                <xsl:text>Mossi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mao (B)'">
+                <xsl:text>Maori</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mri (T)'">
+                <xsl:text>Maori</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'may (B)'">
+                <xsl:text>Malay (macrolanguage)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'msa (T)'">
+                <xsl:text>Malay (macrolanguage)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mul'">
+                <xsl:text>Multiple languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mun'">
+                <xsl:text>Munda languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mus'">
+                <xsl:text>Creek</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mwl'">
+                <xsl:text>Mirandese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mwr'">
+                <xsl:text>Marwari</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bur (B)'">
+                <xsl:text>Burmese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'mya (T)'">
+                <xsl:text>Burmese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'myn'">
+                <xsl:text>Mayan languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'myv'">
+                <xsl:text>Erzya</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nah'">
+                <xsl:text>Nahuatl languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nai'">
+                <xsl:text>North American Indian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nap'">
+                <xsl:text>Neapolitan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nau'">
+                <xsl:text>Nauru</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nav'">
+                <xsl:text>Navajo; Navaho</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nbl'">
+                <xsl:text>Ndebele, South; South Ndebele</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nde'">
+                <xsl:text>Ndebele, North; North Ndebele</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ndo'">
+                <xsl:text>Ndonga</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nds'">
+                <xsl:text>Low German; Low Saxon; German, Low; Saxon, Low</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nep'">
+                <xsl:text>Nepali (macrolanguage)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'new'">
+                <xsl:text>Nepal Bhasa; Newari</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nia'">
+                <xsl:text>Nias</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nic'">
+                <xsl:text>Niger-Kordofanian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'niu'">
+                <xsl:text>Niuean</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'dut (B)'">
+                <xsl:text>Dutch; Flemish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nld (T)'">
+                <xsl:text>Dutch; Flemish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nno'">
+                <xsl:text>Norwegian Nynorsk; Nynorsk, Norwegian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nob'">
+                <xsl:text>Bokmål, Norwegian; Norwegian Bokmål</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nog'">
+                <xsl:text>Nogai</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'non'">
+                <xsl:text>Norse, Old</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nor'">
+                <xsl:text>Norwegian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nqo'">
+                <xsl:text>N'Ko</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nso'">
+                <xsl:text>Pedi; Sepedi; Northern Sotho</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nub'">
+                <xsl:text>Nubian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nwc'">
+                <xsl:text>Classical Newari; Old Newari; Classical Nepal Bhasa</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nya'">
+                <xsl:text>Chichewa; Chewa; Nyanja</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nym'">
+                <xsl:text>Nyamwezi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nyn'">
+                <xsl:text>Nyankole</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nyo'">
+                <xsl:text>Nyoro</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'nzi'">
+                <xsl:text>Nzima</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'oci'">
+                <xsl:text>Occitan (post 1500)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'oji'">
+                <xsl:text>Ojibwa</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ori'">
+                <xsl:text>Oriya (macrolanguage)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'orm'">
+                <xsl:text>Oromo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'osa'">
+                <xsl:text>Osage</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'oss'">
+                <xsl:text>Ossetian; Ossetic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ota'">
+                <xsl:text>Turkish, Ottoman (1500-1928)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'oto'">
+                <xsl:text>Otomian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'paa'">
+                <xsl:text>Papuan languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pag'">
+                <xsl:text>Pangasinan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pal'">
+                <xsl:text>Pahlavi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pam'">
+                <xsl:text>Pampanga; Kapampangan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pan'">
+                <xsl:text>Panjabi; Punjabi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pap'">
+                <xsl:text>Papiamento</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pau'">
+                <xsl:text>Palauan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'peo'">
+                <xsl:text>Persian, Old (ca.600-400 B.C.)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'per (B)'">
+                <xsl:text>Persian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'fas (T)'">
+                <xsl:text>Persian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'phi'">
+                <xsl:text>Philippine languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'phn'">
+                <xsl:text>Phoenician</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pli'">
+                <xsl:text>Pali</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pol'">
+                <xsl:text>Polish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pon'">
+                <xsl:text>Pohnpeian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'por'">
+                <xsl:text>Portuguese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pra'">
+                <xsl:text>Prakrit languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pro'">
+                <xsl:text>Provençal, Old (to 1500);Occitan, Old (to 1500)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'pus'">
+                <xsl:text>Pushto; Pashto</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'qaa-qtz'">
+                <xsl:text>Reserved for local use</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'que'">
+                <xsl:text>Quechua</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'raj'">
+                <xsl:text>Rajasthani</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'rap'">
+                <xsl:text>Rapanui</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'rar'">
+                <xsl:text>Rarotongan; Cook Islands Maori</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'roa'">
+                <xsl:text>Romance languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'roh'">
+                <xsl:text>Romansh</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'rom'">
+                <xsl:text>Romany</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'rum (B)'">
+                <xsl:text>Romanian; Moldavian; Moldovan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ron (T)'">
+                <xsl:text>Romanian; Moldavian; Moldovan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'rum (B)'">
+                <xsl:text>Romanian; Moldavian; Moldovan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ron (T)'">
+                <xsl:text>Romanian; Moldavian; Moldovan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'run'">
+                <xsl:text>Rundi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'rup'">
+                <xsl:text>Aromanian; Arumanian; Macedo-Romanian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'rus'">
+                <xsl:text>Russian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sad'">
+                <xsl:text>Sandawe</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sag'">
+                <xsl:text>Sango</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sah'">
+                <xsl:text>Yakut</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sai'">
+                <xsl:text>South American Indian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sal'">
+                <xsl:text>Salishan languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sam'">
+                <xsl:text>Samaritan Aramaic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'san'">
+                <xsl:text>Sanskrit</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sas'">
+                <xsl:text>Sasak</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sat'">
+                <xsl:text>Santali</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'scn'">
+                <xsl:text>Sicilian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sco'">
+                <xsl:text>Scots</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sel'">
+                <xsl:text>Selkup</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sem'">
+                <xsl:text>Semitic languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sga'">
+                <xsl:text>Irish, Old (to 900)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sgn'">
+                <xsl:text>Sign Languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'shn'">
+                <xsl:text>Shan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sid'">
+                <xsl:text>Sidamo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sin'">
+                <xsl:text>Sinhala; Sinhalese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sio'">
+                <xsl:text>Siouan languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sit'">
+                <xsl:text>Sino-Tibetan languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sla'">
+                <xsl:text>Slavic languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'slo (B)'">
+                <xsl:text>Slovak</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'slk (T)'">
+                <xsl:text>Slovak</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'slo (B)'">
+                <xsl:text>Slovak</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'slk (T)'">
+                <xsl:text>Slovak</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'slv'">
+                <xsl:text>Slovenian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sma'">
+                <xsl:text>Southern Sami</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sme'">
+                <xsl:text>Northern Sami</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'smi'">
+                <xsl:text>Sami languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'smj'">
+                <xsl:text>Lule Sami</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'smn'">
+                <xsl:text>Inari Sami</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'smo'">
+                <xsl:text>Samoan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sms'">
+                <xsl:text>Skolt Sami</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sna'">
+                <xsl:text>Shona</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'snd'">
+                <xsl:text>Sindhi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'snk'">
+                <xsl:text>Soninke</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sog'">
+                <xsl:text>Sogdian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'som'">
+                <xsl:text>Somali</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'son'">
+                <xsl:text>Songhai languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sot'">
+                <xsl:text>Sotho, Southern</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'spa'">
+                <xsl:text>Spanish; Castilian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'alb (B)'">
+                <xsl:text>Albanian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sqi (T)'">
+                <xsl:text>Albanian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'srd'">
+                <xsl:text>Sardinian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'srn'">
+                <xsl:text>Sranan Tongo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'srp'">
+                <xsl:text>Serbian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'srr'">
+                <xsl:text>Serer</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ssa'">
+                <xsl:text>Nilo-Saharan languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ssw'">
+                <xsl:text>Swati</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'suk'">
+                <xsl:text>Sukuma</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sun'">
+                <xsl:text>Sundanese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sus'">
+                <xsl:text>Susu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'sux'">
+                <xsl:text>Sumerian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'swa'">
+                <xsl:text>Swahili (macrolanguage)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'swe'">
+                <xsl:text>Swedish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'syc'">
+                <xsl:text>Classical Syriac</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'syr'">
+                <xsl:text>Syriac</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tah'">
+                <xsl:text>Tahitian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tai'">
+                <xsl:text>Tai languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tam'">
+                <xsl:text>Tamil</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tat'">
+                <xsl:text>Tatar</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tel'">
+                <xsl:text>Telugu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tem'">
+                <xsl:text>Timne</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ter'">
+                <xsl:text>Tereno</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tet'">
+                <xsl:text>Tetum</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tgk'">
+                <xsl:text>Tajik</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tgl'">
+                <xsl:text>Tagalog</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tha'">
+                <xsl:text>Thai</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tib (B)'">
+                <xsl:text>Tibetan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'bod (T)'">
+                <xsl:text>Tibetan</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tig'">
+                <xsl:text>Tigre</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tir'">
+                <xsl:text>Tigrinya</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tiv'">
+                <xsl:text>Tiv</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tkl'">
+                <xsl:text>Tokelau</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tlh'">
+                <xsl:text>Klingon; tlhIngan-Hol</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tli'">
+                <xsl:text>Tlingit</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tmh'">
+                <xsl:text>Tamashek</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tog'">
+                <xsl:text>Tonga (Nyasa)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ton'">
+                <xsl:text>Tonga (Tonga Islands)</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tpi'">
+                <xsl:text>Tok Pisin</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tsi'">
+                <xsl:text>Tsimshian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tsn'">
+                <xsl:text>Tswana</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tso'">
+                <xsl:text>Tsonga</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tuk'">
+                <xsl:text>Turkmen</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tum'">
+                <xsl:text>Tumbuka</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tup'">
+                <xsl:text>Tupi languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tur'">
+                <xsl:text>Turkish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tut'">
+                <xsl:text>Altaic languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tvl'">
+                <xsl:text>Tuvalu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'twi'">
+                <xsl:text>Twi</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'tyv'">
+                <xsl:text>Tuvinian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'udm'">
+                <xsl:text>Udmurt</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'uga'">
+                <xsl:text>Ugaritic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'uig'">
+                <xsl:text>Uighur; Uyghur</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ukr'">
+                <xsl:text>Ukrainian</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'umb'">
+                <xsl:text>Umbundu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'und'">
+                <xsl:text>Undetermined</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'urd'">
+                <xsl:text>Urdu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'uzb'">
+                <xsl:text>Uzbek</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'vai'">
+                <xsl:text>Vai</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ven'">
+                <xsl:text>Venda</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'vie'">
+                <xsl:text>Vietnamese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'vol'">
+                <xsl:text>Volapük</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'vot'">
+                <xsl:text>Votic</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'wak'">
+                <xsl:text>Wakashan languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'wal'">
+                <xsl:text>Wolaitta; Wolaytta</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'war'">
+                <xsl:text>Waray</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'was'">
+                <xsl:text>Washo</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'wel (B)'">
+                <xsl:text>Welsh</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'cym (T)'">
+                <xsl:text>Welsh</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'wen'">
+                <xsl:text>Sorbian languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'wln'">
+                <xsl:text>Walloon</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'wol'">
+                <xsl:text>Wolof</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'xal'">
+                <xsl:text>Kalmyk; Oirat</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'xho'">
+                <xsl:text>Xhosa</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'yao'">
+                <xsl:text>Yao</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'yap'">
+                <xsl:text>Yapese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'yid'">
+                <xsl:text>Yiddish</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'yor'">
+                <xsl:text>Yoruba</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'ypk'">
+                <xsl:text>Yupik languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'zap'">
+                <xsl:text>Zapotec</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'zbl'">
+                <xsl:text>Blissymbols; Blissymbolics; Bliss</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'zen'">
+                <xsl:text>Zenaga</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'zgh'">
+                <xsl:text>Standard Moroccan Tamazight</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'zha'">
+                <xsl:text>Zhuang; Chuang</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'chi (B)'">
+                <xsl:text>Chinese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'zho (T)'">
+                <xsl:text>Chinese</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'znd'">
+                <xsl:text>Zande languages</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'zul'">
+                <xsl:text>Zulu</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'zun'">
+                <xsl:text>Zuni</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'zxx'">
+                <xsl:text>No linguistic content; Not applicable</xsl:text>
+            </xsl:when>
+            <xsl:when test="@code = 'zza'">
+                <xsl:text>Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="@code" />
